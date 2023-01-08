@@ -1,0 +1,2 @@
+window.addEventListener("DOMContentLoaded",app);const toggleHeader=(e,t,n,l)=>{const o=document.getElementById(e),a=document.querySelector(".navigation"),r=document.getElementById("background");o.addEventListener("click",(function(){a.style.right=l,r.style.backgroundColor=t,r.style.left=n,a.style.transition="all 1s linear",r.style.transition="all 1s linear"}))};function app(){toggleHeader("open-burger","hsla(0, 0%, 8%, .8)","0","0"),toggleHeader("close-burger","hsla(0, 0%, 8%, 0)","-35%","-65%")}
+//# sourceMappingURL=index.js.map

@@ -1,0 +1,87 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    
+    .navigation {
+        width: 65%;
+        height: 100vh;
+    
+        flex-direction: column;
+        
+        position: fixed;
+        top: 0;
+        right: -65%;
+        
+        background-color: v.$White;
+        font-size: v.$size-principal;
+        color: v.$Gray;
+        list-style: none;
+
+        
+        .container__li {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            list-style: none;
+            padding-left: 2.5rem;
+
+            li {
+                display: flex;
+                align-items: center;
+
+                img {
+                    margin-left: 1rem;
+                }
+            }
+            
+        }
+
+        .container__close-burger {
+            display: flex;
+            justify-content: flex-end;
+
+            margin-top: 2rem;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.container__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    padding: 0 2.5rem;
+    margin-top: 1rem;
+
+    .login {
+        border: none;
+        background-color: v.$White;
+        color: v.$Gray;
+
+        font-size: 1.5rem;
+    }
+
+    .register {
+        border-radius: 15px;
+        border: 2px solid v.$Gray;
+        background-color: v.$White;
+        padding: 1rem 0;
+        color: v.$Gray;
+    }
+}
+.background {
+    width: 35%;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: -35%;
+
+}
