@@ -6,21 +6,47 @@
     display: flex;
     justify-content: space-between;
 
+    @include m.desktop {
+        height: 7.5vh;
+        padding: 4rem 4rem 0 4rem;
+        margin-bottom: 5rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .open-burger {
+        @include m.desktop {
+            display: none;
+        }
+        
+    }
+
+    
     
     .navigation {
         width: 65%;
         height: 100vh;
-    
-        flex-direction: column;
         
         position: fixed;
+
         top: 0;
         right: -65%;
         
         background-color: v.$White;
         font-size: v.$size-principal;
-        color: v.$Gray;
         list-style: none;
+
+        @include m.desktop {
+            display: flex;
+            position: sticky;
+
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            height: 7.5vh;
+            width: 100%;
+        }
+        
 
         
         .container__li {
@@ -30,14 +56,38 @@
 
             list-style: none;
             padding-left: 2.5rem;
+            
+            @include m.desktop {
+                flex-direction: row;
+                gap: 3rem;
+                padding-left: 4rem;
+            }
+            
 
-            li {
+            .lis {
+                color: v.$Gray;
+
                 display: flex;
-                align-items: center;
+                flex-direction: column;
 
-                img {
-                    margin-left: 1rem;
+                @include m.desktop {
+                    cursor: pointer;
+
+                    &:hover {
+                        color: v.$Black;
+                    }
                 }
+                
+
+                .container__lis-img {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        margin-left: 1rem;
+                    }
+                }
+
             }
             
         }
@@ -48,6 +98,11 @@
 
             margin-top: 2rem;
             margin-right: 1rem;
+
+            @include m.desktop {
+                display: none;
+            }
+            
         }
     }
 }
@@ -59,13 +114,32 @@
 
     padding: 0 2.5rem;
     margin-top: 1rem;
+    @include m.desktop {
+        flex-direction: row;
+        margin-top: 0;
+        padding: 0;
+    }
+    
 
     .login {
-        border: none;
+        border-radius: 15px;
+        border: 2px solid v.$White;
+
         background-color: v.$White;
         color: v.$Gray;
-
+        padding: 1rem 0;
+    
         font-size: 1.5rem;
+        cursor: pointer;
+
+        @include m.desktop {
+            padding: 1.5rem 1.8rem;
+            
+            &:hover {
+                color: v.$Black;
+            }
+        }
+        
     }
 
     .register {
@@ -74,14 +148,84 @@
         background-color: v.$White;
         padding: 1rem 0;
         color: v.$Gray;
+
+        cursor: pointer;
+        
+        @include m.desktop {
+            padding: 1.5rem 1.8rem;
+
+            &:hover {
+                color: v.$Black;
+                border-color: v.$Black;
+            }
+        }
+        
     }
 }
+
 .background {
     width: 35%;
     height: 100vh;
+
 
     position: fixed;
     top: 0;
     left: -35%;
 
+}
+.company {
+    top: 2rem;
+    left: 0;
+    right: -5rem;
+
+}
+.features {
+    top: 2rem;
+    right: 0;
+}
+
+.app {
+    display: none;
+    @include m.desktop {
+        position: relative;
+    }
+    
+
+    .container__li-created {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+            
+        list-style: none;
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+
+        @include m.desktop {
+            position: absolute;
+
+            background-color: v.$White;
+            padding: 2rem;
+            margin: 0;
+            box-shadow: 0 0 50px 1px pink;
+
+        }
+
+        li {
+
+            @include m.desktop {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            img {
+                @include m.desktop {
+                    width: 2rem;
+                }
+                
+            }
+        }
+        
+    }
 }
